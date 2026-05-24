@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Management System</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-100 min-h-screen text-slate-800">
+  <main class="max-w-7xl mx-auto p-4 md:p-8">
+    <h1 class="text-3xl md:text-4xl font-bold text-center mb-8">
+      Student Management System
+    </h1>
+
+    <section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <!-- Form Section -->
+      <div class="bg-white rounded-2xl shadow-lg p-6">
+        <h2 id="formTitle" class="text-2xl font-semibold mb-5">
+          Add Student
+        </h2>
+
+        <form id="studentForm" class="space-y-4">
+          <div>
+            <label class="block font-medium mb-1">Student ID</label>
+            <input id="studentId" type="text" class="input" placeholder="ST001" />
+            <p id="studentIdError" class="error"></p>
+          </div>
+
+          <div>
+            <label class="block font-medium mb-1">Full Name</label>
+            <input id="fullName" type="text" class="input" placeholder="Enter full name" />
+            <p id="fullNameError" class="error"></p>
+          </div>
+
+          <div>
+            <label class="block font-medium mb-1">Age</label>
+            <input id="age" type="number" class="input" placeholder="Enter age" />
+            <p id="ageError" class="error"></p>
+          </div>
+
+          <div>
+            <label class="block font-medium mb-1">Email</label>
+            <input id="email" type="email" class="input" placeholder="example@gmail.com" />
+            <p id="emailError" class="error"></p>
+          </div>
+
+          <div>
+            <label class="block font-medium mb-1">Course</label>
+            <input id="course" type="text" class="input" placeholder="Full Stack Development" />
+            <p id="courseError" class="error"></p>
+          </div>
+
+          <div>
+            <label class="block font-medium mb-1">Contact Number</label>
+            <input id="contact" type="text" class="input" placeholder="07XXXXXXXX" />
+            <p id="contactError" class="error"></p>
+          </div>
+
+          <div>
+            <label class="block font-medium mb-1">Address</label>
+            <textarea id="address" class="input resize-none" rows="3" placeholder="Enter address"></textarea>
+            <p id="addressError" class="error"></p>
+          </div>
+
+          <button id="submitBtn" type="submit"
+            class="w-full bg-blue-600 text-white py-3 rounded-xl font-semibold hover:bg-blue-700 transition">
+            Add Student
+          </button>
+
+          <button id="resetBtn" type="button"
+            class="w-full bg-slate-500 text-white py-3 rounded-xl font-semibold hover:bg-slate-600 transition">
+            Reset Form
+          </button>
+        </form>
+      </div>
+
+      <!-- Display Section -->
+      <div class="lg:col-span-2 bg-white rounded-2xl shadow-lg p-6">
+        <div class="flex flex-col md:flex-row gap-4 md:items-center md:justify-between mb-6">
+          <h2 class="text-2xl font-semibold">Student List</h2>
+
+          <input id="searchInput" type="text"
+            class="border border-slate-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="Search by ID, name or course..." />
+        </div>
+
+        <div id="studentList" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Student cards will appear here -->
+        </div>
+
+        <p id="emptyMessage" class="text-center text-slate-500 mt-8 hidden">
+          No student records found.
+        </p>
+
+        <button id="clearAllBtn"
+          class="mt-6 bg-red-600 text-white px-5 py-3 rounded-xl font-semibold hover:bg-red-700 transition">
+          Clear All Records
+        </button>
+      </div>
+    </section>
+  </main>
+
+<script src="script.js"></script>
+</body>
+
+</html>
